@@ -19,7 +19,7 @@ targets += $(DTB_LIST)
 ifeq ($(CONFIG_EXYNOS_DTBTOOL),y)
 targets += dtb.img
 
-DTB_OBJS += $(shell find -L $(obj)/dts/ -name \*.dtb)
+DTB_OBJS += $(shell find -L $(obj)/ -name \*.dtb)
 
 $(obj)/dtb.img: $(DTB_OBJS) FORCE
 	$(call if_changed,dtbtool_exynos)
